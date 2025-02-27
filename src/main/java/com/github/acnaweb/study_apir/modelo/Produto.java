@@ -9,6 +9,14 @@ public class Produto {
         this.nome = nome;
     }
 
+    public Produto(String nome) {
+        this.nome = nome;
+    }
+
+    public Produto(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
