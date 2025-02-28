@@ -34,7 +34,12 @@ public class ProductService {
         }
     }
 
-    public void deleteProduct(Produto produto) {
-
+    public void deleteProduct(int id) {
+        Produto produto = new Produto(id);
+        for (Produto product : products) {
+            if (product.getId() == id) {
+                products.remove(produto);
+            }
+        }
     }
 }
