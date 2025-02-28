@@ -9,22 +9,22 @@ public class ProductService {
 
     List<Produto> products = new ArrayList<Produto>();
 
-    public void createProduct(int id, String nome) {
-        Produto produto = new Produto(id, nome);
+    public Produto createProduct(Produto produto) {
         products.add(produto);
+        return null;
     };
 
-    public void getProductById(int id) {
+    public Produto getProductById(int id) {
         Produto produto = new Produto(id);
         for (Produto product : products) {
             if (product.getId() == id) {
                 products.remove(produto);
             }
         }
-
+        return produto;
     }
 
-    public void updateProduct(int id, String nome) {
+    public Produto updateProduct(int id, String nome) {
         Produto produto = new Produto(id, nome);
         for (Produto product : products) {
             if (product.getId() == id) {
@@ -32,6 +32,7 @@ public class ProductService {
                 products.add(produto);
             }
         }
+        return produto;
     }
 
     public void deleteProduct(int id) {

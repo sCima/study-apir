@@ -1,7 +1,7 @@
 package com.github.acnaweb.study_apir.modelo;
 
 public class Produto {
-    int id;
+    Integer id;
     String nome;
 
     public Produto(int id, String nome) {
