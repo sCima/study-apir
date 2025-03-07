@@ -24,15 +24,13 @@ public class ProductService {
     }
     public Optional<Product> updateProduct(Long id, Product product) {
         
-        Optional<Product> opt = products.stream()
-                .filter(e -> e.getId().equals(id)).findFirst();
-        if (opt.isPresent()) {
-            Product retorno = opt.get();
-            retorno.setNome(product.getNome());
-            return retorno;
-        }
-
-        return null;
+        return products.stream()
+                .filter(e -> e.getId().equals(id))
+                .findFirst()
+                .map(p -> {
+                    p.setNome(product.getNome());
+                    return p;
+                });               
     }
     public void deleteProduct(Long id) {
 
