@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.acnaweb.study_apir.model.Product;
 import com.github.acnaweb.study_apir.service.ProductService;
 
 @RestController
@@ -19,28 +20,29 @@ public class ControllerProduct {
     private ProductService productService;
 
     @PostMapping
-    public ResponseEntity<String> create() {
+    public ResponseEntity<String> create(Product product) {
+
+        System.out.println(product.getNome());
+        
         productService.createProduct(null);
+
         return ResponseEntity.status(201).body("Produto cadastrado");
     }
 
     @DeleteMapping
     public ResponseEntity<Void> delete() {
-        productService.deleteProduct(null);
         return ResponseEntity.status(204).build();
 
     }
 
     @PutMapping
     public ResponseEntity<String> update() {
-        productService.updateProduct(null, null);
         return ResponseEntity.status(200).body("Produto atualizado");        
     }
 
     @GetMapping
     public ResponseEntity<String> find() {
-        productService.getProductById(null);
-        return ResponseEntity.status(200).body("Maça");        
+        return ResponseEntity.status(200).body("Pêra");        
 
     }
 }
