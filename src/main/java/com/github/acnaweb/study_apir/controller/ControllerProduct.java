@@ -1,5 +1,8 @@
 package com.github.acnaweb.study_apir.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,25 +31,33 @@ public class ControllerProduct {
         return ResponseEntity.status(201).body(productCreated);
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete() {
-        return ResponseEntity.status(204).build();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        boolean result = productService.deleteProduct(id);
 
+        if (result) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }     
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> update(
-                                @PathVariable Long id, 
-                                @RequestBody Product product) {
-        Product productUpdated = 
-            productService.updateProduct(id, product);
+    public ResponseEntity<Product> 
+            update(@PathVariable Long id, @RequestBody Product product) {
+       
+        return productService.updateProduct(id, product)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
 
-        return ResponseEntity.status(200).body(productUpdated);        
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> findById(@PathVariable Long id) {
+        return ResponseEntity.status(200).body(null);        
     }
 
     @GetMapping
-    public ResponseEntity<String> find() {
-        return ResponseEntity.status(200).body("Pêra");        
-
+    public ResponseEntity<List<Product>> findAll() {
+        return ResponseEntity.ok(productService.getAll());
     }
 }
