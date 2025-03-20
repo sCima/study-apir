@@ -10,6 +10,18 @@ API Java para estudo de Spring Boot
 mvn clean package
 ```
 
+* Configuração do Swagger
+
+    - https://springdoc.org/properties.html
+
+- application.properties
+
+```
+springdoc.swagger-ui.path=/
+springdoc.swagger-ui.disable-swagger-default-url=true
+```
+
+
 ## Navegação
 
 ### Executar a API
