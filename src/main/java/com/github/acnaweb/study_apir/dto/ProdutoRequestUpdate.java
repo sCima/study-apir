@@ -2,9 +2,9 @@ package com.github.acnaweb.study_apir.dto;
 
 import java.math.BigDecimal;
 
-import com.github.acnaweb.study_apir.model.Product;
+import com.github.acnaweb.study_apir.model.Produto;
 
-public class ProductRequestUpdate {
+public class ProdutoRequestUpdate {
     private BigDecimal valor;
 
     public BigDecimal getValor() {
@@ -15,7 +15,7 @@ public class ProductRequestUpdate {
         this.valor = valor;
     }
 
-    public Product toModel(Product product) {
+    public Produto toModel(Produto product) {
         product.setValor(this.valor);
         return product;
     }

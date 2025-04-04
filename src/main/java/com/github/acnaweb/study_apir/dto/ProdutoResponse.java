@@ -1,20 +1,20 @@
-package com.github.acnaweb.study_apir.model;
+package com.github.acnaweb.study_apir.dto;
 
 import java.math.BigDecimal;
 
-import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.github.acnaweb.study_apir.model.Produto;
 
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ProdutoResponse {
     private Long id;
     private String nome;
     private BigDecimal valor;
+
+    public ProdutoResponse toDto(Produto product) {
+        this.setId(product.getId());
+        this.setNome(product.getNome());
+        this.setValor(product.getValor());
+        return this;
+    }
     
     public Long getId() {
         return id;
@@ -33,6 +33,6 @@ public class Product {
     }
     public void setValor(BigDecimal valor) {
         this.valor = valor;
-    }    
-
+    }
+        
 }
