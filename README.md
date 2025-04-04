@@ -32,6 +32,10 @@ springdoc.swagger-ui.disable-swagger-default-url=true
 mvn spring-boot:run
 ```
 
+## MER
+
+![Imagem_MER](assets/images/img.png)
+
 ### Documentação da API (Swagger)
 - http://localhost:8080/swagger-ui.html
 
