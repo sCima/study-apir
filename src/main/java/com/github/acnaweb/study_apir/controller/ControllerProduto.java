@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.acnaweb.study_apir.dto.ProdutoRequestCreate;
 import com.github.acnaweb.study_apir.dto.ProdutoRequestUpdate;
 import com.github.acnaweb.study_apir.dto.ProdutoResponse;
-import com.github.acnaweb.study_apir.service.ProductService;
+import com.github.acnaweb.study_apir.service.ProdutoService;
 
 @RestController
 @RequestMapping("produtos")
 public class ControllerProduto {
 
     @Autowired
-    private ProductService productService;
+    private ProdutoService productService;
 
     @PostMapping
     public ResponseEntity<ProdutoResponse> create(

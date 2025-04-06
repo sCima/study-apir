@@ -12,7 +12,7 @@ import com.github.acnaweb.study_apir.model.Produto;
 import com.github.acnaweb.study_apir.repository.ProdutoRepository;
 
 @Service
-public class ProductService {
+public class ProdutoService {
     
     @Autowired
     private ProdutoRepository productRepository;
