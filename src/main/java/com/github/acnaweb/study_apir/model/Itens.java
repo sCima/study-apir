@@ -2,6 +2,8 @@ package com.github.acnaweb.study_apir.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Itens {
     @Id
@@ -9,14 +11,13 @@ public class Itens {
     private Long id;
 
     @ManyToOne
-    private Long pedido_id = new Pedidos().getId();
+    private Pedidos pedido_id;
 
     @ManyToOne
-    private Long produto_id = new Product().getId();
+    private Product produto_id;
 
     private Integer quantidade;
-    private double valor;
-
+    private BigDecimal valor;
 
 
     public Long getId() {
@@ -27,19 +28,19 @@ public class Itens {
         this.id = id;
     }
 
-    public Long getPedido_id() {
+    public Pedidos getPedido_id() {
         return pedido_id;
     }
 
-    public void setPedido_id(Long pedido_id) {
+    public void setPedido_id(Pedidos pedido_id) {
         this.pedido_id = pedido_id;
     }
 
-    public Long getProduto_id() {
+    public Product getProduto_id() {
         return produto_id;
     }
 
-    public void setProduto_id(Long produto_id) {
+    public void setProduto_id(Product produto_id) {
         this.produto_id = produto_id;
     }
 
@@ -51,11 +52,11 @@ public class Itens {
         this.quantidade = quantidade;
     }
 
-    public double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 }
