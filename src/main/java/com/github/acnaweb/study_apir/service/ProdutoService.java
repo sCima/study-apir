@@ -5,9 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.acnaweb.study_apir.dto.ProdutoRequestCreate;
-import com.github.acnaweb.study_apir.dto.ProdutoRequestUpdate;
-
+import com.github.acnaweb.study_apir.dto.produto.ProdutoRequestCreate;
+import com.github.acnaweb.study_apir.dto.produto.ProdutoRequestUpdate;
 import com.github.acnaweb.study_apir.model.Produto;
 import com.github.acnaweb.study_apir.repository.ProdutoRepository;
 
