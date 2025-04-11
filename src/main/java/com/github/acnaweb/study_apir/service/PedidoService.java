@@ -1,16 +1,16 @@
 package com.github.acnaweb.study_apir.service;
 
-import com.github.acnaweb.study_apir.dto.PedidoRequestCreate;
-import com.github.acnaweb.study_apir.dto.PedidoRequestUpdate;
-import com.github.acnaweb.study_apir.dto.ProductRequestCreate;
-import com.github.acnaweb.study_apir.dto.ProductRequestUpdate;
+import com.github.acnaweb.study_apir.dto.pedido.PedidoRequestCreate;
+import com.github.acnaweb.study_apir.dto.pedido.PedidoRequestUpdate;
 import com.github.acnaweb.study_apir.model.Pedidos;
 import com.github.acnaweb.study_apir.repository.PedidosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PedidoService {
 
     @Autowired

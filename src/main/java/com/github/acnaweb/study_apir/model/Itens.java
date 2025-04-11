@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 @Entity
 public class Itens {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

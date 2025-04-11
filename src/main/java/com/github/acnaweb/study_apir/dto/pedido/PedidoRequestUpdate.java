@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.dto;
+package com.github.acnaweb.study_apir.dto.pedido;
 
 import com.github.acnaweb.study_apir.model.Pedidos;
 

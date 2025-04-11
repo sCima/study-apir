@@ -1,9 +1,8 @@
 package com.github.acnaweb.study_apir.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Pedidos {
@@ -12,13 +11,15 @@ public class Pedidos {
     private Long id;
 
     private String status;
-    private Itens itens;
 
-    public Itens getItens() {
+    @OneToMany
+    private List<Itens> itens;
+
+    public List<Itens> getItens() {
         return itens;
     }
 
-    public void setItens(Itens itens) {
+    public void setItens(List<Itens> itens) {
         this.itens = itens;
     }
 

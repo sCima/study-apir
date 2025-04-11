@@ -1,8 +1,6 @@
 package com.github.acnaweb.study_apir.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.acnaweb.study_apir.dto.ProductRequestCreate;
-import com.github.acnaweb.study_apir.dto.ProductRequestUpdate;
-import com.github.acnaweb.study_apir.dto.ProductResponse;
+import com.github.acnaweb.study_apir.dto.produto.ProductRequestCreate;
+import com.github.acnaweb.study_apir.dto.produto.ProductRequestUpdate;
+import com.github.acnaweb.study_apir.dto.produto.ProductResponse;
 import com.github.acnaweb.study_apir.service.ProductService;
 
 @RestController
