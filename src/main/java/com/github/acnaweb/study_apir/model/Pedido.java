@@ -2,11 +2,7 @@ package com.github.acnaweb.study_apir.model;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 @Entity
 public class Pedido {
@@ -15,7 +11,7 @@ public class Pedido {
     private Long id;
     private String status;
 
-    @OneToMany
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items;
 
     public Long getId() {
