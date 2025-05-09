@@ -2,6 +2,7 @@ package com.github.acnaweb.study_apir.controller;
 
 import java.util.List;
 
+import com.github.acnaweb.study_apir.dto.produto.ProdutoResponse;
 import com.github.acnaweb.study_apir.model.Pedido;
 import com.github.acnaweb.study_apir.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,13 @@ public class ControllerPedido {
     public ResponseEntity<PedidoResponse> create(
                                 @RequestBody PedidoRequestCreate dto) {                                            
         Pedido pedido = pedidoService.create(dto);
-        return ResponseEntity.noContent().build();
+        PedidoResponse response = new PedidoResponse();
+
+        return ResponseEntity.status(201).body(
+                new PedidoResponse().toDto(
+                        pedidoService.create(dto)
+                )
+        );
     }
 
     @GetMapping("{id}")
