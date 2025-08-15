@@ -2,6 +2,12 @@
 
 API Java para estudo de Spring Boot
 
+## Variáveis de ambiente
+
+```.env
+export $(cat .env | xargs)
+```
+
 ## MER
 
 ![](assets/images/mer.png)
